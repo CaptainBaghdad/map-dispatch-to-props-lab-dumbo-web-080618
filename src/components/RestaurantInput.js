@@ -4,11 +4,7 @@ import { connect } from 'react-redux';
 
 export class RestaurantInput extends Component {
 
-  state = {
-    name: '',
-    location: ''
-  }
-
+  
   handleOnNameChange = event => {
     this.setState({
       name: event.target.value
@@ -24,6 +20,9 @@ export class RestaurantInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     // add missing code
+    this.setState({
+      
+    })
   }
 
   render() {
@@ -34,6 +33,7 @@ export class RestaurantInput extends Component {
             type="text"
             onChange={(event) => this.handleOnNameChange(event)}
             id="name"
+            name="name"
             placeholder="restaurant name" />
         </p>
         <p>
@@ -41,6 +41,7 @@ export class RestaurantInput extends Component {
             type="text"
             onChange={(event) => this.handleOnLocationChange(event)}
             id="location"
+            name="location"
             placeholder="location" />
         </p>
         <input type="submit" />
@@ -51,4 +52,7 @@ export class RestaurantInput extends Component {
 
 
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+const mapDispatchToProps = (state) => {
+ 
+}
+export default connect()RestaurantInput
